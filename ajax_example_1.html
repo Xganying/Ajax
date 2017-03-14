@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax_example_1</title>
+	<script type="text/javascript" src="./ajax.js"></script>
+</head>
+<script type="text/javascript">
+	window.onload = function(){
+		var oBtn = document.getElementById('btn1');
+		oBtn.onclick = function(){
+			ajax('a.txt?t='+new Date().getTime(),function(str){
+				alert(str);
+			},function(s){
+				alert(s);
+			});
+		};
+	}; 
+</script>
+<body>
+	读取静态文本文件a.txt的内容:
+	<input id="btn1" type="button" value="读取" /> 
+</body>
+</html>
